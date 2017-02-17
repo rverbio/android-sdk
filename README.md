@@ -93,7 +93,7 @@ Finally, you can update both bits of data at once:
 
 If you are having issues with the SDK, please let us know.  
 * We can always be reached at: <support@rverb.io>.  
-* If you discover a bug, we have an Issue Tracker at <https://github.com/rverbio/android-library/issues>
+* If you discover a bug, we have an Issue Tracker at <https://github.com/rverbio/android-sdk/issues>
 
 **License**
 
