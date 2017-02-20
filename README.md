@@ -47,13 +47,13 @@ If you don't have a custom application, you can also initialize Rverbio from the
     
 **Custom Data**
 
-At any time, after Rverbio has been initialized, you can pass data to the Rverbio instance, in the form of Key/Value Pairs, and those pieces of data will get attached to any feedback sent by the user.
+At any time, after Rverbio has been initialized, you can pass data to the Rverbio instance in the form of Key/Value Pairs. Whatever data you attach to the instance will get attached to any feedback sent by the user.
 
-For instance, if you tell Rverbio that a user has just purchased your game's latest power-up, if they submit feedback later that session, that data will get sent along with their feedback, and you will be able to see that when you view their request.
+For instance: if you tell Rverbio that a user has just purchased your game's latest power-up, and they submit feedback later that session, that data will get sent along with their feedback.
 
 To add a Key/Value Pair, simply call this method on the Rverbio instance:
 
-	Rverbio.getInstance().addContextDataItem("Last In-App Purchase", "Infinite Fuel Power-Up");
+	Rverbio.getInstance().getContextData().put("Last In-App Purchase", "Infinite Fuel Power-Up");
 
 You can also add a Map, like so:
 
@@ -61,7 +61,9 @@ You can also add a Map, like so:
     data.put("In App Purchase", "Infinite Fuel Power-Up");
     data.put("High Score", "123510351");
     
-    Rverbio.getInstance().addContextDataItems(data);
+    Rverbio.getInstance().getContextData().putAll(data);
+
+Context Data is a type HashMap<String, String>, so any operation you can perform on a HashMap, you can perform on Context Data.
 
 **End User Data**
 
