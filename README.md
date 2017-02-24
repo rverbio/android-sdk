@@ -15,7 +15,7 @@ Rverbio offers some important customization features, with more to come. If you 
 
 In your module's gradle.config, add the following line to your dependencies:
     
-    compile 'io.rverb:feedback:1.0.0'
+    compile 'io.rverb:feedback:0.1.0'
    
 **Quick Start**
 
