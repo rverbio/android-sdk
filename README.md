@@ -1,3 +1,5 @@
+[ ![Download](https://api.bintray.com/packages/rverbio/feedback/android-sdk/images/download.svg) ](https://bintray.com/rverbio/feedback/android-sdk/_latestVersion)
+
 Rverbio Android SDK
 -------------------
 
