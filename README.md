@@ -1,5 +1,3 @@
-[ ![Download](https://api.bintray.com/packages/rverbio/feedback/android-sdk/images/download.svg) ](https://bintray.com/rverbio/feedback/android-sdk/_latestVersion)
-
 Rverbio Android SDK
 -------------------
 
@@ -13,11 +11,21 @@ Rverbio offers some important customization features, with more to come. If you 
 * Add custom data to feedback on the back-end
 * Supply user identifiers such as an account ID so you can link a user across channels
 
+**Prerequisites**
+
+Before you can use Rverbio in your app, you must create an account at https://rverb.io, and generate an API Key by adding an application.
+
 **Installation**
 
 In your module's gradle.config, add the following line to your dependencies:
     
     compile 'io.rverb:feedback:0.1.0'
+
+In your AndroidManifest.xml, add this within the <application> block:
+
+    <meta-data android:name="io.rverb.apiKey" android:value="Replace_this_with_your_API_Key" />
+
+The API Key is the one that you generated when you added an application to your account at https://rverb.io. Please note that each application should have it's own API Key.
    
 **Quick Start**
 
