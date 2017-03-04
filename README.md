@@ -23,7 +23,7 @@ In your module's gradle.config, add the following line to your dependencies:
 
 In your AndroidManifest.xml, add this within the <application> block:
 
-    <meta-data android:name="io.rverb.apiKey" android:value="Replace_this_with_your_API_Key" />
+    <meta-data android:name="io.rverb.apiKey" android:value="replace_this_with_your_API_Key" />
 
 The API Key is the one that you generated when you added an application to your account at https://rverb.io. Please note that each application should have it's own API Key.
    
