@@ -21,7 +21,7 @@ Before you can use Rverbio in your app, you must create an account at https://rv
 
 In your module's gradle.config, add the following line to your dependencies:
     
-    compile 'io.rverb:feedback:0.2.1-alpha'
+    compile 'io.rverb:feedback:0.3.2-alpha'
 
 In your AndroidManifest.xml, add this within the <application> block:
 
@@ -35,9 +35,9 @@ In your custom Application's onCreate method, add this line:
 
     Rverbio.initialize(this);
     
-You are now ready to capture feedback! When you want to pop the feedback dialog from an activity, simply invoke like so:
+You are now ready to capture feedback! When you want to start the feedback activity, simply invoke like so:
 
-    Rverbio.getInstance().showDialog(this);
+    Rverbio.getInstance().startFeedbackActivity(this);
     
 That's all you need to do -- we'll take care of the rest!
 
@@ -65,18 +65,8 @@ For instance: if you tell Rverbio that a user has just purchased your game's lat
 
 To add a Key/Value Pair, simply call this method on the Rverbio instance:
 
-	Rverbio.getInstance().getContextData().put("Last In-App Purchase", "Infinite Fuel Power-Up");
-
-You can also add a Map, like so:
-
-	Map<String, String> data = new ArrayMap<>();
-    data.put("In App Purchase", "Infinite Fuel Power-Up");
-    data.put("High Score", "123510351");
-    
-    Rverbio.getInstance().getContextData().putAll(data);
-
-Context Data is a type HashMap<String, String>, so any operation you can perform on a HashMap, you can perform on Context Data.
-
+	Rverbio.getInstance().addContextDataItem("Last In-App Purchase", "Infinite Fuel Power-Up");
+	
 **End User Data**
 
 Rverbio automatically links all feedback requests from a single user from an app. By default, each device & app will treat a single person as a new user. However, if you have an identifier by which you know the user, such as a UserId, you can add that to the user, and then we will be able to like all feedback requests from a single user, across devices and apps.
