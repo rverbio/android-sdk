@@ -16,13 +16,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Rverbio.getInstance().getContextData().put("Item 1", "This happened at MainActivity#onCreate");
+        Rverbio.getInstance().addContextDataItem("Item 1", "This happened at MainActivity#onCreate");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Rverbio.getInstance().showActivity(MainActivity.this);
+                Rverbio.getInstance().startFeedbackActivity(MainActivity.this);
             }
         });
     }

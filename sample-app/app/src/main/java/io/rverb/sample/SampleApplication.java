@@ -14,6 +14,6 @@ public class SampleApplication extends Application {
         Stetho.initializeWithDefaults(this);
 
         Rverbio.initialize(this);
-        Rverbio.getInstance().getContextData().put("Test 2", "This happened at Application#onCreate");
+        Rverbio.getInstance().addContextDataItem("Test 2", "This happened at Application#onCreate");
     }
 }
