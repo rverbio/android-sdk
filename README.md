@@ -21,7 +21,7 @@ Before you can use Rverbio in your app, you must create an account at https://rv
 
 In your module's gradle.config, add the following line to your dependencies:
     
-    compile 'io.rverb:feedback:0.3.2-alpha'
+    compile 'io.rverb:feedback:0.3.3-alpha'
 
 In your AndroidManifest.xml, add this within the <application> block:
 
