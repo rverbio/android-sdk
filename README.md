@@ -17,6 +17,8 @@ Rverbio offers some important customization features, with more to come. If you 
 
 Before you can use Rverbio in your app, you must create an account at https://rverb.io, and generate an API Key by adding an application.
 
+If you need to retrieve your API Key later, simply log into https://rverb.io & select the application. The API Key is in the upper right corner of the page.
+
 **Installation**
 
 In your module's gradle.config, add the following line to your dependencies:
