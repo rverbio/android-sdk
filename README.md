@@ -23,19 +23,15 @@ If you need to retrieve your API Key later, simply log into https://rverb.io & s
 
 In your module's gradle.config, add the following line to your dependencies:
     
-    compile 'io.rverb:feedback:0.3.4-alpha'
-
-In your AndroidManifest.xml, add this within the <application> block:
-
-    <meta-data android:name="io.rverb.apiKey" android:value="replace_this_with_your_API_Key" />
-
-The API Key is the one that you generated when you added an application to your account at https://rverb.io. Please note that each application should have it's own API Key.
+    compile 'io.rverb:feedback:0.7.0-alpha'
    
 **Quick Start**
 
 In your custom Application's onCreate method, add this line:
 
-    Rverbio.initialize(this);
+    Rverbio.initialize(this, {apiKey});
+
+{apiKey} is available on the application page in your account at https://rverb.io. Please note that each application should have it's own API Ke
     
 You are now ready to capture feedback! When you want to start the feedback activity, simply invoke like so:
 
@@ -45,10 +41,11 @@ That's all you need to do -- we'll take care of the rest!
 
 **Overriding the Default Settings**
 
-You can initialize Rverbio with a RverbioOptions object, setting up defaults as you like. In version 1.0 of the SDK, the only default you can set is whether a screenshot is taken when the user initiates a feedback request:
+You can initialize Rverbio with a RverbioOptions object, setting up defaults as you like. In version 0.7.0 of the SDK, you can set whether a screenshot is taken when the user initiates a feedback request (default is true), and if debug logging is enabled (default is false):
 
     RverbioOptions options = new RverbioOptions();
     options.setAttachScreenshotEnabled(false);
+	options.setDebugMode(true);
     
     Rverbio.initialize(this, options);
 
@@ -56,12 +53,11 @@ You can initialize Rverbio with a RverbioOptions object, setting up defaults as 
 
 If you don't have a custom application, you can also initialize Rverbio from the first activity your app launches. There are a couple caveats, though:
 
-* You will want to ensure that it is only initialized once. If it is initialized multiple times, everything will still work, but the "Session Started" logging will be inaccurate, and all data relating to session length and number of visits may be wrong.
 * If a user can enter your app through different activities, you will need to ensure that Rverbio is initialized on any of the possible starting activities, but again, you will want to ensure that it is only initialized once.
     
 **Custom Data**
 
-At any time, after Rverbio has been initialized, you can pass data to the Rverbio instance in the form of Key/Value Pairs. Whatever data you attach to the instance will get attached to any feedback sent by the user.
+At any time after Rverbio has been initialized, you can pass data to the Rverbio instance in the form of Key/Value Pairs. Whatever data you attach to the instance will get attached to any feedback sent by the user.
 
 For instance: if you tell Rverbio that a user has just purchased your game's latest power-up, and they submit feedback later that session, that data will get sent along with their feedback.
 
