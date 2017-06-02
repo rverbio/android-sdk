@@ -47,7 +47,7 @@ You can initialize Rverbio with a RverbioOptions object, setting up defaults as 
     options.setAttachScreenshotEnabled(false);
 	options.setDebugMode(true);
     
-    Rverbio.initialize(this, options);
+    Rverbio.initialize(this, {apiKey}, options);
 
 **Initializing Without a Custom Application**
 
